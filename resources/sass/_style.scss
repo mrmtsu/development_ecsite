@@ -12,15 +12,42 @@ img.incart{
 }
 
 .mycart_box{
-
   color: #4c4c4c;
   font-weight: bold;
   text-align: center;
   margin-top: 24px;
   padding: 24px 8px;
   font-size: 1.1em;
-  background-color: #fefefe;
-  
+}
+
+html {
+  background-color: #f2f2f2;
+}
+
+.header {
+  height: 100px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 999;
+}
+
+#header-list {
+  display: flex;
+  line-height: 100px;
+  width: 100%;
+}
+
+.header-logo {
+  margin: 0 auto;
+  font-size: 40px;
+  z-index: 999;
+}
+
+.content-main {
+  margin-top: 180px;
 }
 
 .footer_design{
@@ -75,9 +102,9 @@ img.incart{
   }
 }
 #cart-btn:hover {
-  background-color: #fff;
+  background-color: #59b1eb;
   border-color: #59b1eb;
-  color: #59b1eb;
+  color: white;
 }
 #cart-btn::before,
 #cart-btn::after {
@@ -312,6 +339,118 @@ img.incart{
   margin-top: 20px;
   letter-spacing: 0.05rem;
 }
+
+
+#nav-drawer {
+  position: absolute;
+  left: 25px;
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display:none;
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span, #nav-open span:before, #nav-open span:after {
+  position: absolute;
+  height: 3px;/*線の太さ*/
+  width: 25px;/*長さ*/
+  border-radius: 3px;
+  background: #555;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+#nav-open span:before {
+  bottom: -8px;
+}
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;/*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;/*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;/*最前面に*/
+  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 200px;/*最大幅（調整してください）*/
+  height: 100%;
+  background: rgb(163, 160, 160);/*背景色*/
+  opacity: 0.8;
+  transition: .3s ease-in-out;/*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);/*左に隠しておく*/
+  padding: 40px 20px;
+  font-size: 30px;
+  .nav-content__post {
+    margin-bottom: 50px;
+    span.nav-btn {
+      &:hover {
+        cursor: pointer;
+        background-color: gray;
+      }
+    }
+    a {
+      color: black;
+    }
+  }
+}
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;/*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);/*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0,0,0,.15);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1024px){
 #gnav > ul .menu .menu_inner li{
   font-size:calc(13 * (100vw / 1024));

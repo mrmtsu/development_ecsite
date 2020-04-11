@@ -28,69 +28,82 @@
 </style>
 <body>
    <div id="app">
-       <nav class="navbar navbar-expand-md navbar-light  shadow-sm" style="">
-           <div class="container">
-               <a class="navbar-brand" style="font-size:1.4em; color: #656565; font-family: trajan-sans-pro, sans-serif; text-decoration:none;" href="{{ url('/') }}" >
-                   {{ config('app.name', 'Laravel') }}
-               </a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="display:none;">
-                   <span class="navbar-toggler-icon"></span>
-               </button>
+       <div class="header">
+        <nav class="navbar navbar-expand-md navbar-light  shadow-sm" id="header-list">
 
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                   <!-- Left Side Of Navbar -->
-                   <ul class="navbar-nav mr-auto">
+                <div id="nav-drawer">
+                    <input id="nav-input" type="checkbox" class="nav-unshown">
+                    <label id="nav-open" for="nav-input">
+                        <span></span></label>
+                    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                    <div id="nav-content">
+                    
+                        <div class="container">
 
-                   </ul>
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                <!-- Left Side Of Navbar -->
+                                <ul class="navbar-nav mr-auto">
 
-                   <!-- Right Side Of Navbar -->
-                   <ul class="navbar-nav ml-auto" >
-                       <!-- Authentication Links -->
-                       @guest
-                           <li class="nav-item">
-                               <a class="nav-link" style="color: #656565;"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
-                           </li>
-                           @if (Route::has('register'))
-                               <li class="nav-item">
-                                   <a class="nav-link" style="color: #656565;"  href="{{ route('register') }}">{{ __('会員登録') }}</a>
-                               </li>
-                           @endif
-                       @else
-                           <li class="nav-item dropdown" style="color: #656565; list-style:none;">
-                               <a id="navbarDropdown" style="color: #656565;  text-decoration:none;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                   {{ Auth::user()->name }} <span class="caret"></span>
-                               </a>
+                                </ul>
 
-                               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                   <a class="dropdown-item" href="{{ route('logout') }}" style="color: #656565;  text-decoration:none;"
-                                   onclick="event.preventDefault();
-                                                   document.getElementById('logout-form').submit();">
-                                       <i class="fas fa-sign-out-alt"></i>
-                                   </a>
+                                <!-- Right Side Of Navbar -->
+                                <ul class="navbar-nav ml-auto" >
+                                    <!-- Authentication Links -->
+                                    @guest
+                                        <li class="nav-item">
+                                            <a class="nav-link" style="color: #656565;"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
+                                        </li>
+                                        @if (Route::has('register'))
+                                            <li class="nav-item">
+                                                <a class="nav-link" style="color: #656565;"  href="{{ route('register') }}">{{ __('会員登録') }}</a>
+                                            </li>
+                                        @endif
+                                    @else
+                                        <li class="nav-item dropdown" style="color: #656565; list-style:none;">
+                                            <a id="navbarDropdown" style="color: #656565;  text-decoration:none;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                                {{ Auth::user()->name }} <span class="caret"></span>
+                                            </a>
 
-                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                       @csrf
-                                   </form>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                <a class="dropdown-item" href="{{ route('logout') }}" style="color: #656565;  text-decoration:none;"
+                                                onclick="event.preventDefault();
+                                                                document.getElementById('logout-form').submit();">
+                                                    <i class="fas fa-sign-out-alt"></i>
+                                                </a>
 
-                                   {{-- 追加 --}}
-                                   <a class="dropdown-item" href="{{ url('/mycart') }}" style="color: #656565;  text-decoration:none; display:none;">
-                                       カートを見る
-                                   </a>
-                               </div>
-                           </li>
-                           {{-- 追加 --}}
-                           <a href="{{ url('/mycart') }}" >
-                               <i class="fas fa-shopping-cart" style="color: #656565; text-decoration:none;"></i>
-                           </a>
-                       @endguest
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+
+                                                {{-- 追加 --}}
+                                                <a class="dropdown-item" href="{{ url('/mycart') }}" style="color: #656565;  text-decoration:none; display:none;">
+                                                    カートを見る
+                                                </a>
+                                            </div>
+                                        </li>
+                                        {{-- 追加 --}}
+                                        <a href="{{ url('/mycart') }}" >
+                                            <i class="fas fa-shopping-cart" style="color: #656565; text-decoration:none;"></i>
+                                        </a>
+                                    @endguest
 
 
-                   </ul>
-               </div>
-           </div>
-       </nav>
-
-       <main class="py-4">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-logo">
+                    <a class="navbar-brand" style="font-size:1.4em; color: #656565; font-family: trajan-sans-pro, sans-serif; text-decoration:none;" href="{{ url('/') }}" >
+                            {{ config('app.name', 'Laravel') }}
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="display:none;">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                </div>
+        </nav>
+       </div>
+       <main class="content-main">
            @yield('content')
        </main>
 
