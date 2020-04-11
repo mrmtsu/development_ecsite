@@ -17,7 +17,7 @@
    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
    <!-- Styles -->
-   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+   <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <style>
 .catImg {position: relative; display: block; margin: 0 auto; width: 100%; height: 420px; overflow: hidden; max-width: 980px; margin: 0 auto 100px; padding-bottom: 50px; letter-spacing: 0.115em;}
@@ -94,9 +94,7 @@
                     </div>
                 </div>
                 <div class="header-logo">
-                    <a class="navbar-brand" style="font-size:1.4em; color: #656565; font-family: trajan-sans-pro, sans-serif; text-decoration:none;" href="{{ url('/') }}" >
-                            {{ config('app.name', 'Laravel') }}
-                        </a>
+                    <a class="navbar-brand" style="font-size:1.4em; color: #656565; font-family: trajan-sans-pro, sans-serif; text-decoration:none;" href="{{ url('/') }}" >SHOP</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="display:none;">
                             <span class="navbar-toggler-icon"></span>
                         </button>
