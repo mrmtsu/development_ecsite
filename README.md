@@ -53,11 +53,8 @@ PHP/Laravel7/postgreSQL/Github/Heroku/Visual Studio Code
 |email|string|null: false|
 |password|string|null: false|
 ### Association
-- has_many :carts
-- has_many :comments
-- has_many :favorites
-- has_many :bookmarks
-
+- has_many :stocks
+- belongs :cart
 
 ## stocksテーブル
 |Column|Type|Options|
