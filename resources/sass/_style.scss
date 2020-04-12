@@ -12,12 +12,15 @@ img.incart{
 }
 
 .mycart_box{
-  color: #4c4c4c;
-  font-weight: bold;
   text-align: center;
-  margin-top: 24px;
+  font-size: 10px;
+  color: rgb(101, 101, 101);
+  font-family: toppan-bunkyu-mincho-pr6n, serif;
+  letter-spacing: 0.115em;
+  -webkit-font-smoothing: antialiased;
+  font-weight: normal;
+  margin: 5px auto;
   padding: 24px 8px;
-  font-size: 1.1em;
 }
 
 html {
@@ -30,7 +33,7 @@ html {
   top: 0;
   right: 0;
   width: 100%;
-  background-color: white;
+  background-color: #f2f2f2;
   z-index: 999;
 }
 
@@ -47,7 +50,7 @@ html {
 }
 
 .content-main {
-  margin-top: 180px;
+  margin-top: 160px;
 }
 
 .footer_design{
@@ -397,17 +400,17 @@ html {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;/*最前面に*/
-  width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
-  max-width: 200px;/*最大幅（調整してください）*/
-  height: 100%;
-  background: rgb(163, 160, 160);/*背景色*/
+  z-index: 9999;
+  width: 100%;
+  max-width: 1440px;
+  height: 90%;
+  background: #f2f2f2;
   opacity: 0.8;
-  transition: .3s ease-in-out;/*滑らかに表示*/
-  -webkit-transform: translateX(-105%);
-  transform: translateX(-105%);/*左に隠しておく*/
+  transition: 0.3s ease-in-out;
+  transform: translateX(-105%);
   padding: 40px 20px;
   font-size: 30px;
+  margin-top: 100px;
   .nav-content__post {
     margin-bottom: 50px;
     span.nav-btn {
@@ -425,7 +428,7 @@ html {
 /*チェックが入ったらもろもろ表示*/
 #nav-input:checked ~ #nav-close {
   display: block;/*カバーを表示*/
-  opacity: .5;
+  // opacity: .5;
 }
 
 #nav-input:checked ~ #nav-content {

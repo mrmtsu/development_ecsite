@@ -47,19 +47,19 @@
                                 </ul>
 
                                 <!-- Right Side Of Navbar -->
-                                <ul class="navbar-nav ml-auto" >
+                                <ul class="navbar-nav ml-auto" style="display: flex;justify-content: space-evenly;font-family: neuhan,Yu Gothic,游ゴシック,YuGothic,游ゴシック体,メイリオ,Meiryo,sans-serif;font-size: 20px;font-weight: 400;line-height: 1;">
                                     <!-- Authentication Links -->
                                     @guest
-                                        <li class="nav-item">
-                                            <a class="nav-link" style="color: #656565;"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
+                                        <li class="nav-item" style="color: #656565; list-style:none;">
+                                            <a class="nav-link" style="color: #656565; list-style:none;"  href="{{ route('login') }}"><i class="fas fa-sign-in-alt"></i></a>
                                         </li>
                                         @if (Route::has('register'))
-                                            <li class="nav-item">
-                                                <a class="nav-link" style="color: #656565;"  href="{{ route('register') }}">{{ __('会員登録') }}</a>
+                                            <li class="nav-item" style="color: #656565; list-style:none;">
+                                                <a class="nav-link" style="color: #656565; text-decoration: none;"  href="{{ route('register') }}">{{ __('会員登録') }}</a>
                                             </li>
                                         @endif
                                     @else
-                                        <li class="nav-item dropdown" style="color: #656565; list-style:none;">
+                                        <li class="nav-item dropdown" style="color: #656565; list-style:none; display:flex;">
                                             <a id="navbarDropdown" style="color: #656565;  text-decoration:none;" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                                 {{ Auth::user()->name }} <span class="caret"></span>
                                             </a>
@@ -87,6 +87,13 @@
                                         </a>
                                     @endguest
 
+                                    <form action="{{url('/search')}}" method="GET" id="formarea" style="display: flex;">
+                                    <input type="text" name="keyword" value="" placeholder="商品名で探す" style="border: none; border-radius: 0; outline: none; background: none; background-color: khaki; font-size: 12px; padding: 10px 5px; height:15px; width: 150px; margin: auto 10px; line-height: 100px;">
+                                        <input type="submit" value="検索" id="submit-btn" style="display:none;">
+                                        <label for="submit-btn">
+                                            <i class="fas fa-search" style="color: rgb(101, 101, 101);"></i>
+                                        </label>
+                                    </form>
 
                                 </ul>
                             </div>
@@ -94,7 +101,7 @@
                     </div>
                 </div>
                 <div class="header-logo">
-                    <a class="navbar-brand" style="font-size:1.4em; color: #656565; font-family: trajan-sans-pro, sans-serif; text-decoration:none;" href="{{ url('/') }}" >SHOP</a>
+                    <a class="navbar-brand" style="font-size:30px; color: #656565; font-family: neuhan,Yu Gothic,游ゴシック,YuGothic,游ゴシック体,メイリオ,Meiryo,sans-serif; text-decoration:none;" href="{{ url('/') }}" >SHOP</a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}" style="display:none;">
                             <span class="navbar-toggler-icon"></span>
                         </button>

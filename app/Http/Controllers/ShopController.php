@@ -18,6 +18,20 @@ class ShopController extends Controller
        return view('shop',compact('stocks')); //追記変更
    }
 
+   public function search(Request $request)
+   {
+       $keyword = $request->input('keyword');
+       $query = Stock::query();   
+       
+       if (!empty($keyword)) {
+           $query->where('name', 'LIKE', "%{$keyword}%")
+             ->orWhere('fee', 'LIKE', "%{$keyword}%")
+             ->orWhere('detail', 'LIKE', "%{$keyword}%");
+       }
+       $stocks = $query->get();
+       return view('search',compact('stocks','keyword', 'items')); //追記変更
+   }
+
    public function myCart(Cart $cart)
    {
        $data = $cart->showCart();

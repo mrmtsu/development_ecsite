@@ -10,6 +10,7 @@
                 <span class="item" style="width: 1274px;"><img src="https://cdn.pixabay.com/photo/2014/09/03/20/15/legs-434918_1280.jpg" id="top-image" style="width:1000px;"></span>
             </span>
        </span>
+       
        <div class="mx-auto" style="max-width:980px; margin: 10px auto;">
            <h1 style="text-align:center; font-size:22px; color: #656565; font-family: toppan-bunkyu-mincho-pr6n, serif; letter-spacing: 0.115em; -webkit-font-smoothing: antialiased; font-weight: normal;">アイテムリスト</h1>
            <div class="">
