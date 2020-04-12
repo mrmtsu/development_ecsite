@@ -29,7 +29,7 @@ class ShopController extends Controller
              ->orWhere('detail', 'LIKE', "%{$keyword}%");
        }
        $stocks = $query->get();
-       return view('search',compact('stocks','keyword', 'items')); //追記変更
+       return view('search',compact('stocks','keyword')); //追記変更
    }
 
    public function myCart(Cart $cart)
