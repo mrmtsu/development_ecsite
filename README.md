@@ -1,3 +1,89 @@
+# README
+
+This README would normally document whatever steps are necessary to get the
+application up and running.
+
+Things you may want to cover:
+
+# TITLE
+CANP
+
+# OVERVIEW
+- 新規登録、ログイン
+- カート機能（追加・削除）
+- 商品一覧（ページネーション）
+- 商品検索
+
+# ER図
+  <!-- ![image](https://user-images.githubusercontent.com/60598010/77984940-006ce000-734e-11ea-8f77-07ac585916be.png) -->
+
+# ID
+- http://developmentecsite.herokuapp.com/
+
+# PRODUCTION BACKGROUND
+- Ruby on railsを中心にプログラミングを学習していたため、他の言語であるPHP（Laravel）を使用した開発を行いたかったため。
+- ecサイトをよく利用することがあり、実際に開発してみたいと思ったため。
+
+# DEMO
+- トップページ
+  ![image](https://user-images.githubusercontent.com/60598010/79074081-59ad1a00-7d25-11ea-8474-59f4baef52ac.png)
+  <br>
+  <br>
+  <br>
+  <br>
+- 商品一覧
+  ![image](https://user-images.githubusercontent.com/60598010/79074118-7a756f80-7d25-11ea-98a3-c9bbb040b1f0.png)
+  <br>
+  <br>
+  <br>
+  <br>
+- カート中身
+  ![image](https://user-images.githubusercontent.com/60598010/79074144-b1e41c00-7d25-11ea-858a-ffe43f56f364.png)
+
+# INGENUITY
+- viewの統一感
+
+# 今後実装したい機能
+- コメント機能
+- 商品レビュー機能
+- API導入
+
+* PHP version
+7.2.29
+* System dependencies
+PHP/Laravel7/postgreSQL/Github/Heroku/Visual Studio Code
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|email|string|null: false|
+|password|string|null: false|
+### Association
+- has_many :carts
+- has_many :comments
+- has_many :favorites
+- has_many :bookmarks
+
+
+## stocksテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string||
+|detail|string||
+|fee|integer||
+|imagepath|string||
+
+## cartsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|references|foreign_key: true|
+|stock|references|foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :stock
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
