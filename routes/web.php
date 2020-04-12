@@ -18,7 +18,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'ShopController@index');
 Route::get('/search', 'ShopController@search');
