@@ -1,12 +1,5 @@
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 # TITLE
-CANP
+SHOP
 
 # OVERVIEW
 - 新規登録、ログイン
@@ -14,7 +7,7 @@ CANP
 - 商品一覧（ページネーション）
 - 商品検索
 
-# ER図
+<!-- # ER図 -->
   <!-- ![image](https://user-images.githubusercontent.com/60598010/77984940-006ce000-734e-11ea-8f77-07ac585916be.png) -->
 
 # ID
